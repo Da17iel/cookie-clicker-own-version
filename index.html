@@ -1,3 +1,8 @@
+<!--
+This is a litte Website
+Here will be so many comments as possible so any third-party person can also understand it
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +12,27 @@
     <link rel="icon" href="MainCookie.png">
 </head>
 <body>
-    <div id="CookieArea">
-        <img src="MainCookie.png" alt="MainCookie" width="200" height="200" id="MainCookie" onclick="CookieClicked()">
-        <p id="ShowCookieNumber"></p>
+    <div id="CookieArea">   <!--The area where the main cookie is-->
+        <img src="MainCookie.png" alt="MainCookie" width="200" height="200" id="MainCookie" onclick="CookieClicked()"><br>
+
+        <!--Show the value of cookies-->
+        <p id="ShowCookieNumber">0.0 Cookies</p>
+        <p id="ShowCookiesPerClick">1.0 Cookies Per Click</p>
+        <p id="ShowCookiesPerSec">0.0 Cookies /s</p>
     </div>
 
     <div id="Shop">
-        <button onclick="Upgrade1Bought()">Click here if Cookies = 10</button>
+        <div class="ShopContent">
+            <button onclick="Upgrade1Bought()" id="BtnOne" class="ShopButtons">Cookies Per Click + 1</button>
+            <p class="inline" id="PriceBtn1">Price: 10</p>
+            <button onclick="Upgrade2Bought()" id="BtnTwo" class="ShopButtons">Cookies Per Click + 2</button>
+            <p class="inline" id="PriceBtn1">Price: 40</p>
+            <button onclick="Upgrade3Bought()" id="BtnThree" class="ShopButtons">Cookies Per Click + 4</button>
+            <p class="inline" id="PriceBtn1">Price: 200</p>
+            <button onclick="Upgrade4Bought()" id="BtnFour" class="ShopButtons">Cookies Per Click + 8</button>
+            <p class="inline" id="PriceBtn1">Price: 500</p>
+        </div>
+        
     </div>
 
     <div id="Perks">
@@ -24,3 +43,6 @@
 
 <script src="script.js"></script>
 </html>
+
+
+<!--Creator: Daniel-->

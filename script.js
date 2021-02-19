@@ -17,6 +17,7 @@ var PriceBtn1 = 20
 var PriceBtn2 = 60
 var PriceBtn3 = 260
 var PriceBtn4 = 660
+var PriceCookie2Btn = 40000
 
 
 var Cookie2MainBtnPrice = 40000
@@ -30,6 +31,7 @@ var MultBtn1 = 0.5
 var MultBtn2 = 1
 var MultBtn3 = 2
 var MultBtn4 = 4
+var MultBtn5 = 1000
 
 
 
@@ -142,7 +144,6 @@ function UpdateTotalCookies() {
     if (Cookie2Bought >= 2) {
         document.getElementById("ShowCookie2Number").innerHTML = TotalCookies.toFixed(1) + " Cookies"
     }
-    
 }
 
 // Change the color of the Price tag. 
@@ -158,6 +159,9 @@ function ChangePriceColor4in1() {               // everytime soomething is made,
     ChangePriceColor(PriceBtn1, "PriceBtn1")    // Changes all of the price tags
     ChangePriceColor(PriceBtn2, "PriceBtn2")
     ChangePriceColor(PriceBtn3, "PriceBtn3")
+    ChangePriceColor(PriceBtn4, "PriceBtn4")
+
+    ChangePriceColor(PriceBtn4, "PriceBtn4")    // Colors for the next cookie
     ChangePriceColor(PriceBtn4, "PriceBtn4")
 }
 
@@ -198,7 +202,7 @@ UpgradeCookie2MainLabel.innerHTML = "Price: 40000"
 
 
 function NextCookie() {
-    if (TotalCookies <= 10000) {
+    if (TotalCookies >= 10000) {
         TotalCookies = TotalCookies - 10000
         document.body.appendChild(Cookie2div);
         Cookie2Bought = 2
@@ -208,6 +212,8 @@ function NextCookie() {
 
         document.getElementById("UpgradeClickerBtn").appendChild(UpgradeCookie2MainBtn);
         document.getElementById("UpgradeClickerBtn").appendChild(UpgradeCookie2MainLabel);
+
+
     }
     return Cookie2Bought
 }
@@ -221,17 +227,19 @@ function NextCookieClicked() {
 
 function UpgradeCookie2Main() {
 
-    
+    if (TotalCookies >= PriceCookie2Btn) {
+        TotalCookies = TotalCookies - PriceCookie2Btn
+        Cookies2PerClick = Cookies2PerClick + MultBtn5
 
-    if (TotalCookies >= Cookie2MainBtnPrice) {
-        TotalCookies = TotalCookies - Cookie2MainBtnPrice
-        Cookies2PerClick = Cookies2PerClick + 1000
+        MultBtn5 = MultBtn5 * 1.05
+        PriceCookie2Btn = PriceCookie2Btn * 1.1
+
         document.getElementById("ShowCookies2PerClick").innerHTML = Cookies2PerClick.toFixed(1) + " Cookies Per Click"
 
         UpdateTotalCookies()
         
     }
-    return TotalCookies, Cookie2MainBtnPrice
+    return TotalCookies, PriceCookie2Btn
 }
 
 

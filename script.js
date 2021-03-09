@@ -212,8 +212,6 @@ function NextCookie() {
 
         document.getElementById("UpgradeClickerBtn").appendChild(UpgradeCookie2MainBtn);
         document.getElementById("UpgradeClickerBtn").appendChild(UpgradeCookie2MainLabel);
-
-
     }
     return Cookie2Bought
 }
